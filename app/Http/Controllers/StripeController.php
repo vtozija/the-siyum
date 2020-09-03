@@ -5,15 +5,7 @@ use Illuminate\Http\Request;
 use Stripe;
 
 class StripeController extends Controller
-{
-    /**
-     * Get the payment view
-     */
-    public function handleGet()
-    {
-        return view('stripe');
-    }
-  
+{ 
     /**
      * Handle payment
      */

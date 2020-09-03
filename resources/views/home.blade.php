@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center order-block">
-        <form>
+        <form id="order-form"> 
             <div class="col-md-8">
                 <h4>ORDER DETAILS</h4>
                 @if (Session::has('success'))
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <button type="button" class="btn btn-danger btn-lg btn-block nav-btn">Next</button>
+                <button type="button" class="btn btn-danger btn-lg btn-block nav-btn" id="next">Next</button>
             </div>
         </form>
     </div>
@@ -158,7 +158,7 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-link btn-lg btn-block nav-btn" type="button">Back</button>
+                                <button class="btn btn-link btn-lg btn-block nav-btn" type="button" id="back">Back</button>
                             </div>
                         </div>
 
@@ -167,7 +167,5 @@
             </div>
         </div>
     </div>
-
-
 </div>
 @endsection

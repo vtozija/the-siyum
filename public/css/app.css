@@ -3,10 +3,6 @@ body {
   font-family: Livory;
 }
 
-main {
-  background-color: white;
-}
-
 #timer {
   background-color: #d43f3a;
   padding: 4px;
@@ -21,8 +17,25 @@ h4 {
   color: black;
 }
 
+.order-block,
+.payment-block {
+  border: solid 1px #f0f0f0;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 .payment-block,
 .states-block {
   display: none;
+}
+
+.checkout-menu {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.checkout-menu a {
+  color: black;
 }
 

@@ -19335,9 +19335,17 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! ./stripe */ "./resources/js/stripe.js");
 
 $(function () {
-  $('.nav-btn').click(function () {
-    $('.order-block').toggle(1000);
+  $('#back').click(function () {
     $('.payment-block').toggle(1000);
+    $('.order-block').toggle(1000);
+  });
+  $("#next").on("click", function () {
+    if ($("#order-form")[0].checkValidity()) {
+      $('.order-block').toggle(1000);
+      $('.payment-block').toggle(1000);
+    } else {
+      $("#order-form")[0].reportValidity();
+    }
   });
   $('#countries').on('change', function () {
     if (this.value == 'USA') {
