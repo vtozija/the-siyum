@@ -3,14 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center order-block">
-        <form id="order-form"> 
+        <form id="order-form">
             <div class="col-md-8">
                 <h4>ORDER DETAILS</h4>
                 @if (Session::has('success'))
-                    <div class="alert alert-success text-center">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                        <p>{{ Session::get('success') }}</p>
-                    </div>
+                <div class="alert alert-success text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                    <p>{{ Session::get('success') }}</p>
+                </div>
                 @endif
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="title" id="mr" value="mr" checked>
@@ -55,7 +55,7 @@
                     <label for="countries">Country</label>
                     <select id="countries" class="form-control">
                         @foreach($countries as $country)
-                            <option value="{{ $country }}">{{ $country }}</option>
+                            <option value="{{ $country['name'] }}">{{ $country['name'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -79,6 +79,7 @@
                     <div class="form-group col-md-4 states-block">
                         <label for="state">State</label>
                         <select id="state" class="form-control">
+                            <option value="" selected></option>
                             @foreach($states as $state)
                                 <option value="{{ $state }}">{{ $state }}</option>
                             @endforeach
@@ -97,7 +98,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <p>Please note that you only have <span id="timer"></span> minutes to complete the transaction
-                    before your tickets are re-released.</p>
+                        before your tickets are re-released.</p>
                 </div>
             </div>
             <div class="col-md-8">

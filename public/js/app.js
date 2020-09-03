@@ -19341,14 +19341,21 @@ $(function () {
   });
   $("#next").on("click", function () {
     if ($("#order-form")[0].checkValidity()) {
-      $('.order-block').toggle(1000);
-      $('.payment-block').toggle(1000);
+      var data = $("#order-form").serialize();
+      $.ajax({
+        type: "POST",
+        url: "/order",
+        success: function success() {
+          $('.order-block').toggle(1000);
+          $('.payment-block').toggle(1000);
+        }
+      });
     } else {
       $("#order-form")[0].reportValidity();
     }
   });
   $('#countries').on('change', function () {
-    if (this.value == 'USA') {
+    if (this.value == 'United States of America') {
       $('.states-block').show();
     } else {
       $('.states-block').hide();
