@@ -50,14 +50,14 @@
                 </div>
                 <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#company-group">+ Add a company</button>
                 <div class="form-group collapse" id="company-group">
-                    <label for="company">Company</label>
-                    <input type="text" class="form-control" id="company" name="company" placeholder="Company">
+                    <label for="company_name">Company</label>
+                    <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Company">
                 </div>
                 <div class="form-group">
                     <label for="countries">Country</label>
                     <select id="countries" class="form-control" name="country">
                         @foreach($countries as $country)
-                            <option value="{{ $country['name'] }}">{{ $country['name'] }}</option>
+                        <option value="{{ $country['name'] }}">{{ $country['name'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -83,7 +83,7 @@
                         <select id="state" class="form-control" name="state">
                             <option value="" selected></option>
                             @foreach($states as $state)
-                                <option value="{{ $state }}">{{ $state }}</option>
+                            <option value="{{ $state }}">{{ $state }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -131,6 +131,24 @@
                         </div>
 
                         <div class='form-row row'>
+                            <div class='form-group col-xs-6'>
+                                <label class='control-label'>Billing Address</label>
+                                <input class='form-control' type='text' name="billing_address" placeholder="Enter here">
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label for="zip">Zip Code</label>
+                                <input type="text" class="form-control" name="zip" placeholder="Eg. 03214">
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
+                            <div class='col-xs-12 form-check'>
+                                <input class="form-check-input" type="checkbox" id="same_address" name="same_address">
+                                <label class="form-check-label" for="sameAddress">Billing address same as shipping</label>
+                            </div>
+                        </div>
+
+                        <div class='form-row row'>
                             <div class='col-md-12 error form-group hide'>
                                 <div class='alert-danger alert'>Please correct the errors and try
                                     again.</div>
@@ -165,7 +183,7 @@
             </div>
         </div>
 
-        
+
     </div>
 </div>
 @endsection

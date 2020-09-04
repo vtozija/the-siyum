@@ -29,11 +29,15 @@ class HomeController extends Controller
         return view('home', ['countries' => $countries, 'states' => $states]);
     }
 
+    /**
+     *  Place an order
+     */
     public function order(OrderRequest $orderRequest)
     {
-        $orderRequest->session()->put('order', $orderRequest->all());
-        $order = Order::create($orderRequest->all());
-        
+        //TODO:
+        $order = Order::updateOrCreate($orderRequest->all());
+        $orderRequest->session()->put('order', $order->id);
+
         return $order;
     }
 

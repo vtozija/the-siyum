@@ -2,6 +2,22 @@ require('./bootstrap');
 require('./stripe');
 
 $(function () {
+    var count = 900;
+    var counter = setInterval(timer, 1000);
+
+    function timer() {
+        count = count - 1;
+        if (count <= 0) {
+            clearInterval(counter);
+            jQuery.get('/restart', function () {
+                console.log('session cleared');
+            });
+            location.reload();
+        }
+
+        document.getElementById("timer").innerHTML = Math.floor(count / 60) + ":" + count % 60;
+    }
+    
     $('#back').click(function () {
         $('.payment-block').toggle(1);
         $('.order-block').toggle(1);
@@ -35,21 +51,5 @@ $(function () {
             $('.states-block').hide();
         }
     });
-
-    var count = 900;
-    var counter = setInterval(timer, 1000);
-
-    function timer() {
-        count = count - 1;
-        if (count <= 0) {
-            clearInterval(counter);
-            jQuery.get('/restart', function () {
-                console.log('session cleared');
-            });
-            location.reload();
-        }
-
-        document.getElementById("timer").innerHTML = Math.floor(count / 60) + ":" + count % 60;
-    }
 
 });

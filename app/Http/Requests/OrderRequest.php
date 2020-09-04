@@ -29,7 +29,7 @@ class OrderRequest extends FormRequest
             'email' => 'required|email',
             'country' => 'required|string',
             'shipping_address' => 'required',
-            'zip' => 'required',
+            'zip' => 'required|numeric',
             'city' => 'required|string',
 
         ];
