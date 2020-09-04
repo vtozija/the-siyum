@@ -19336,8 +19336,8 @@ __webpack_require__(/*! ./stripe */ "./resources/js/stripe.js");
 
 $(function () {
   $('#back').click(function () {
-    $('.payment-block').toggle(1000);
-    $('.order-block').toggle(1000);
+    $('.payment-block').toggle(1);
+    $('.order-block').toggle(1);
   });
   $("#next").on("click", function () {
     if ($("#order-form")[0].checkValidity()) {
@@ -19350,8 +19350,8 @@ $(function () {
         },
         data: data,
         success: function success() {
-          $('.order-block').toggle(1000);
-          $('.payment-block').toggle(1000);
+          $('.order-block').toggle(1);
+          $('.payment-block').toggle(1);
         }
       });
     } else {

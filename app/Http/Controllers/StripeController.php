@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PaymentRequest;
 use App\Order;
 use Illuminate\Http\Request;
 use Stripe;
@@ -11,7 +12,7 @@ class StripeController extends Controller
     /**
      * Handle payment
      */
-    public function payment(Request $request)
+    public function payment(PaymentRequest $request)
     {
         Stripe\Stripe::setApiKey(config('services.stripe.secret'));
         $payment = Stripe\Charge::create ([
@@ -21,7 +22,7 @@ class StripeController extends Controller
                 "description" => "Ticket order payment." 
         ]);
 
-        dd($payment->id);
+        // dd($payment->id);
   
         return $request->session()->flash('success', 'Payment has been successfully processed.');
           

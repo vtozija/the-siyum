@@ -28,7 +28,7 @@
                 <img src="{{ asset('img/logo.svg') }}" alt="The Siyum">
             </a>
             <div class="checkout-menu">
-                <h3>CHECKOUT</h3>
+                <h4>CHECKOUT</h4>
                 <a href="">1. Order Details</a> >
                 <a href="">2. Tickets</a> >
                 <a href="">3. Payment</a>

@@ -3,8 +3,8 @@ require('./stripe');
 
 $(function () {
     $('#back').click(function () {
-        $('.payment-block').toggle(1000);
-        $('.order-block').toggle(1000);
+        $('.payment-block').toggle(1);
+        $('.order-block').toggle(1);
     });
 
     $("#next").on("click", function () {
@@ -18,8 +18,8 @@ $(function () {
                 },
                 data: data,
                 success: function () {
-                    $('.order-block').toggle(1000);
-                    $('.payment-block').toggle(1000);
+                    $('.order-block').toggle(1);
+                    $('.payment-block').toggle(1);
                 }
             });
         }

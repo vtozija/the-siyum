@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center order-block">
-        <form id="order-form">
-            <div class="col-md-8">
+    <div class="row justify-content-center">
+        <div class="col-md-8 order-block">
+            <form id="order-form">
                 <h3>ORDER DETAILS</h3>
                 @if (Session::has('success'))
                 <div class="alert alert-success text-center">
@@ -62,12 +62,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="shipping_address1">Shipping address 1</label>
-                    <input type="text" class="form-control" id="shipping_address1" name="shipping_address1" placeholder="Enter here" required>
+                    <label for="shipping_address">Shipping address</label>
+                    <input type="text" class="form-control" id="shipping_address" name="shipping_address" placeholder="Enter here" required>
                 </div>
                 <div class="form-group">
-                    <label for="shipping_address2">Shipping address 2</label>
-                    <input type="text" class="form-control" id="shipping_address2" name="shipping_address2" placeholder="Enter here">
+                    <label for="billing_address">Billing address</label>
+                    <input type="text" class="form-control" id="billing_address" name="billing_address" placeholder="Enter here">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
@@ -88,33 +88,17 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <h3>ORDER SUMMARY</h3>
-                <div class="form-group col-md-12">
-                    <span>$180 Men's Ticket's X 4 </span>
-                    <span>$180</span>
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-lg btn-block clr-btn" id="next">Next</button>
                 </div>
-                <div class="form-group col-md-12" id="total">
-                    <p>Total: $720</p>
-                </div>
-                <div class="form-group col-md-12">
-                    <p>Please note that you only have <span id="timer"></span> minutes to complete the transaction
-                        before your tickets are re-released.</p>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <button type="button" class="btn btn-danger btn-lg btn-block nav-btn" id="next">Next</button>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
-    <div class="row payment-block">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default credit-card-box">
-                <div class="panel-heading display-table">
-                    <div class="row display-tr">
-                        <h3 class="panel-title display-td">Payment Details</h3>
+        <div class="col-md-8 payment-block">
+            <div class="credit-card-box">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h3>TICKET HOLDER INFORMATION</h3>
                     </div>
                 </div>
                 <div class="panel-body">
@@ -154,21 +138,34 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-xs-12">
-                                <button class="btn btn-danger btn-lg btn-block" type="submit">Pay Now ($720)</button>
+                            <div class="col-xs-4">
+                                <button class="btn btn-link btn-lg btn-block" type="button" id="back">Back</button>
+                            </div>
+                            <div class="col-xs-8">
+                                <button class="btn btn-lg btn-block clr-btn" type="submit">Check out</button>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <button class="btn btn-link btn-lg btn-block nav-btn" type="button" id="back">Back</button>
-                            </div>
-                        </div>
-
                     </form>
                 </div>
             </div>
         </div>
+
+        <div class="col-md-3 col-md-offset-1 order-summary d-table">
+            <h3>ORDER SUMMARY</h3>
+            <div class="form-group col-md-12">
+                <span>$180 Men's Ticket's X 4 </span>
+                <span>$180</span>
+            </div>
+            <div class="form-group col-md-12" id="total">
+                <p>Total: $720</p>
+            </div>
+            <div class="form-group col-md-12">
+                <p>Please note that you only have <span id="timer"></span> minutes to complete the transaction
+                    before your tickets are re-released.</p>
+            </div>
+        </div>
+
+        
     </div>
 </div>
 @endsection
