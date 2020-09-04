@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequest;
+use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -30,8 +31,10 @@ class HomeController extends Controller
 
     public function order(OrderRequest $orderRequest)
     {
-        //save values to session
-        //create order and presave it, than pass it back to the payment form
+        $orderRequest->session()->put('order', $orderRequest->all());
+        $order = Order::create($orderRequest->all());
+        
+        return $order;
     }
 
     /**

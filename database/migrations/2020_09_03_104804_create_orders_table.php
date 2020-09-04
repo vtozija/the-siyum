@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('prefix');
+            $table->string('title')->nullable();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
@@ -26,6 +26,7 @@ class CreateOrdersTable extends Migration
             $table->string('zip');
             $table->string('city');
             $table->string('state')->nullable();
+            $table->string('charge_id')->nullable();
             $table->timestamps();
         });
     }

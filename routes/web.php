@@ -17,5 +17,4 @@ Route::get('/', 'HomeController@index');
 Route::post('/order', 'HomeController@order');
 Route::get('/restart', 'HomeController@restart');
 
-Route::get('payment', 'StripeController@handleGet');
-Route::post('payment', 'StripeController@handlePost')->name('payment');
+Route::post('payment', 'StripeController@payment')->name('payment');

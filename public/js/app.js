@@ -19345,6 +19345,10 @@ $(function () {
       $.ajax({
         type: "POST",
         url: "/order",
+        headers: {
+          "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content')
+        },
+        data: data,
         success: function success() {
           $('.order-block').toggle(1000);
           $('.payment-block').toggle(1000);

@@ -6,10 +6,11 @@ body {
 
 #timer {
     background-color: #d43f3a;
-    padding: 4px;
+    padding: 4px 11px;
+    font-weight: bold;
 }
 
-h4 {
+h3 {
     font-weight: bold;
     color: #4c2414;
 }
@@ -20,13 +21,25 @@ h4 {
 
 .order-block, .payment-block {
     border: solid 1px #f0f0f0;
+    box-shadow: 2px 2px #f0f0f0;
     background-color: #ffffff;
     padding: 20px;
     margin-top: 20px;
+    border-radius: 10px;
 }
 
 .payment-block, .states-block {
     display: none;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 17px;
+    word-spacing: 50px;
+    letter-spacing: 5px;
+    padding: 20px;
+    border: solid 1px #f0f0f0;
+    background-color: #f5f5f5;
 }
 
 .checkout-menu {
