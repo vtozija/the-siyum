@@ -70,11 +70,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="zip">Zip</label>
-                        <input type="text" class="form-control" id="zip">
+                        <input type="text" class="form-control" id="zip" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" id="city">
+                        <input type="text" class="form-control" id="city" required>
                     </div>
                     <div class="form-group col-md-4 states-block">
                         <label for="state">State</label>
